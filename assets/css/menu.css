@@ -16,6 +16,3 @@ nav{
     color: var(--primary-color);
 }
 
-.active{
-    background-color: var(--color-menu-active);
-}

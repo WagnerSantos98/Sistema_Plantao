@@ -4,6 +4,24 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Sidenav.init(elems);
 });
 
+//Inicialização tabs página de configuraçãoes e afins que se utilizam deste recurso
+document.addEventListener('DOMContentLoaded', function(){
+  var elems = document.querySelectorAll('.tabs');
+  var instances = M.Tabs.init(elems);
+});
+
+//Inicialização modal
+document.addEventListener('DOMContentLoaded', function(){
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+});
+
+//Inicialização select
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+
 
 //FullCalendar
 document.addEventListener('DOMContentLoaded', function() {

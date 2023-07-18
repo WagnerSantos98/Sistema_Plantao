@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Compilação CSS - Materialize-->
+    <link rel="stylesheet" href="../assets/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Compilação JS Materialize-->
+    <script src="../assets/libs/materialize/js/materialize.min.js"></script>
+
+    
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#!">Dashboard</a></li>
+            <li><a href="#!">Plantões</a></li>
+            <li><a href="#!">Equipes</a></li>
+            <li><a href="#!">Relatórios</a></li>
+            <li><a href="#!" class="active">Administrador</a></li>
+            <li><a href="#!"><i class="material-icons">logout</i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <!--Navbar-->
+
+    <!--Sidenav-->
+    <ul id="slide-out" class="sidenav">
+        <li><div class="user-view">
+          <div class="background">
+            <img src="../assets/libs/materialize/img/office.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="../assets/libs/materialize/img/yuna.jpg"></a>
+          <a href="#name"><span class="white-text name">John Doe</span></a>
+          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div></li>
+        <div class="menu">
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">apps</i> Dashboard</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">calendar_month</i> Plantões</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">groups</i>Equipes</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">query_stats</i>Relatórios</a></li>
+            <li><a href="#!" style="color: #fff" class="active"><i class="material-icons" style="color: #fff;">settings</i>Administrador</a></li>
+            <li class="divider"></li>
+            <div class="menu-exit">
+                <li><a href="#!" style="color: #fff;"><i class="material-icons" style="color: #fff;">logout</i>Logout</a></li>
+            </div>
+        </div>
+      </ul>
+     <!--Sidenav--> 
+      
+     <!--Tabs-->
+      <div class="main">
+        <div class="container">
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="Pesquisar usuários" id="first_name" type="text" class="validate">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            <div class="row">
+                <div class="col s12">
+                  <ul class="tabs">
+                    <li class="tab col s3"><a href="#test1">Usuários</a></li>
+                    <li class="tab col s3"><a href="#test2">Configurações</a></li>
+                  </ul>
+                </div>
+
+                <!--Lista de Uusários-->
+                <div id="test1" class="col s12">
+                    <table>
+                        <thead>
+                          <tr>
+                             <th><label>
+                                <input type="checkbox"/>
+                                <span></span>
+                                </label></th>
+                              <th>Nome</th>
+                              <th>Email</th>
+                              <th>
+                                <div class="input-field col s6">
+                                    <select>
+                                        <option selected>Todos</option>
+                                        <option>Colaborador</option>
+                                        <option>Administrador</option>
+                                        <option>Plantonista</option>
+                                        <option>Enfermeiro</option>
+                                      </select>
+                                      <label>Funções</label>
+                                </div>
+                              </th>
+                              <th>Status</th>
+                              <th><a href="#!"><i class="material-icons">edit</i></a></th>
+                              <th><a href="#!"><i class="material-icons">delete</i></a></th>
+                          </tr>
+                        </thead>
+                
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+                </div>
+
+                <!--Configurações-->
+                <div id="test2" class="col s12">Configurações</div>
+            </div>
+
+            <!--Button Action - Criação de Equipe-->
+            <div class="fixed-action-btn">
+                <a href="#modal-cadastro" class="waves-effect waves-light btn-floating btn-large blue btn modal-trigger">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+        </div>
+      </div>
+    <!--Tabs-->
+
+    <!--Modal de cadastro de usuário-->
+    <div id="modal-cadastro" class="modal">
+        <div class="modal-content">
+        <h5 class="title">Novo usuário</h5>
+        <img src="../assets/libs/materialize/img/yuna.jpg" class="circle" alt="">
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="nome" type="text" class="validate">
+                  <label for="nome">Nome completo*</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email*</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="identificador" type="text" class="validate">
+                  <label for="identificador">Identificador interno</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                    <input id="contato" type="text" class="validate">
+                    <label for="contato">Contato*</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="cpf" type="text" class="validate">
+                    <label for="cpf">CPF*</label>
+                  </div>
+                  <p>
+                    <label>
+                      <input type="checkbox"/>
+                      <span>Permissão de Administrador</span>
+                    </label>
+                  </p>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a class="waves-effect waves-light btn">Cadastrar</a>
+        </div>
+    </div>
+
+<!--Script's-->
+<script src="../assets/js/initialize.js"></script>
+</body>
+</html>
