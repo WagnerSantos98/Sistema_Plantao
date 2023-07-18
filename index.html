@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Compilação CSS - Materialize-->
+    <link rel="stylesheet" href="assets/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Compilação JS Materialize-->
+    <script src="assets/libs/materialize/js/materialize.min.js"></script>
+
+    <!--Script's-->
+    <script src="assets/js/initialize.js"></script>
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#!">Dashboard</a></li>
+            <li><a href="#!">Plantões</a></li>
+            <li><a href="#!">Equipes</a></li>
+            <li><a href="#!">Relatórios</a></li>
+            <li><a href="#!">Configurações</a></li>
+            <li><a href="#!"><i class="material-icons">logout</i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <!--Navbar-->
+
+    <!--Sidenav-->
+    <ul id="slide-out" class="sidenav">
+        <li><div class="user-view">
+          <div class="background">
+            <img src="assets/libs/materialize/img/office.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="assets/libs/materialize/img/yuna.jpg"></a>
+          <a href="#name"><span class="white-text name">John Doe</span></a>
+          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div></li>
+        <div class="menu">
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">apps</i> Dashboard</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">calendar_month</i> Plantões</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">groups</i>Equipes</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">query_stats</i>Relatórios</a></li>
+            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">settings</i>Configurações</a></li>
+            <li class="divider"></li>
+            <div class="menu-exit">
+                <li><a href="#!" style="color: #fff;"><i class="material-icons" style="color: #fff;">logout</i>Logout</a></li>
+            </div>
+        </div>
+      </ul>
+     <!--Sidenav--> 
+      
+      <div class="main">
+        Dashboard
+      </div>
+
+</body>
+</html>

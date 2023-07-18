@@ -1,0 +1,16 @@
+:root{
+    --color-menu: #6bb1d9;
+    --primary-color: #fff;
+}
+nav{
+    background-color: var(--color-menu);
+    padding: 0px 20px;
+}
+
+.sidenav{
+    background-color: var(--color-menu);
+}
+.divider{
+    height: 1px;
+    color: var(--primary-color);
+}
