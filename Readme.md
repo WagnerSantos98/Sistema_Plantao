@@ -2,7 +2,7 @@
 
 ## Framewoorks
     - Materializecss - v1.0.0
-    - CFullcalendar - v6.1.8
+    - Fullcalendar - v6.1.8
 
     Back-end
     - PHP
