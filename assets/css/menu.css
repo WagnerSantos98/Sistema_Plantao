@@ -16,3 +16,40 @@ nav{
     color: var(--primary-color);
 }
 
+/*Button table edit and delete*/
+.btn-edit, .btn-delete{
+    color: var(--color-menu);
+}
+
+/*Switch - Administrador*/
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: var(--color-menu-active);
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: var(--color-menu);
+}
+
+/*Tabs -  tela Administrador*/
+.tabs .tab a {
+    color: var(--color-menu-active);
+}
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: rgba(107, 177, 217,0.2);
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: var(--color-menu);
+}
+
+.tabs .indicator{
+    background-color: var(--color-menu);
+}
+
+/*Pagination tela de Administrador*/
+.pagination{
+    float: right;
+}
+.pagination li.active {
+    background-color: var(--color-menu);
+}
