@@ -2,6 +2,7 @@
     --color-menu: #039be5;
     --color-menu-active: #6bb1d9;
     --primary-color: #fff;
+    --sidenav-color-icons: #eee;
 }
 nav{
     background-color: var(--color-menu);
@@ -13,6 +14,12 @@ nav{
 }
 .divider{
     height: 1px;
+    color: var(--primary-color);
+}
+.sidenav li>a>i.material-icons{
+    color: var(--sidenav-color-icons);
+}
+.sidenav li>a{
     color: var(--primary-color);
 }
 
@@ -52,4 +59,66 @@ nav{
 }
 .pagination li.active {
     background-color: var(--color-menu);
+}
+
+/*Buttons -  semana tela equipe*/
+[type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #5a5a5a;
+    top: 0px;
+    z-index: 0;
+}
+
+[type="checkbox"].filled-in+span:not(.lever):after {
+    border-radius: 50%;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):before {
+    top: 0;
+    left: 1px;
+    width: 8px;
+    height: 13px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 0px #fff;
+    border-bottom: 0px #fff; 
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+[type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #5a5a5a;
+    top: 19px;
+    z-index: 0;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    top: 19px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-menu-active);
+    background-color: var(--color-menu-active);
+    z-index: 0;
+}
+
+[type="checkbox"]+span:not(.lever) {
+    position: relative;
+    padding: 0px 5.5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
