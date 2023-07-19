@@ -4,6 +4,11 @@
     --primary-color: #fff;
     --sidenav-color-icons: #eee;
 }
+
+.row-cards{
+    margin-top: 40px;
+}
+
 nav{
     background-color: var(--color-menu);
     padding: 0px 20px;

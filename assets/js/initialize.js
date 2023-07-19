@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//Inicializar dropdwn
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  var instances = M.Dropdown.init(elems, options);
+});
+
 
 
 //FullCalendar
