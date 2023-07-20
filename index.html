@@ -13,6 +13,8 @@
     <!--Compilação JS Materialize-->
     <script src="assets/libs/materialize/js/materialize.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <!--Script's-->
     <script src="assets/js/initialize.js"></script>
     <title>Document</title>
@@ -177,6 +179,12 @@
           <div class="row row-oculta" id="alterPassword">
             <form class="col s12">
               <div class="row">
+                <p>A nova senha deve ter os seguintes requisitos:</p>
+                  <div id="barra_number"><li>Pelo menos um número</li></div>
+                  <div id="barra_caracter"><li>Pelo menos 8 caracteres</li></div>
+                  <div id="barra_maiuscula"><li>Pelo menos um caracter maiúsculo</li></div>
+                  <div id="barra_minuscula"><li>Pelo menos um caracter minúsculo</li></div>
+                  <div id="barra_especial"><li>Pelo menos um caracter não alfanuméricos</li></div>      
                 <div class="input-field col s6">
                   <input id="senha_atual" type="password" class="validate">
                   <label for="senha_atual">Senha atual</label>

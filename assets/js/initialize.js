@@ -42,15 +42,58 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Dropdown.init(elems, options);
 });
 
-//Perfil usuário - ocultar e exibir div para alteração de senha
-document.getElementById("btnAlter").addEventListener("click", function(){
-  var divOculta = document.getElementById("alterPassword");
-  if(divOculta.style.display === "none"){
-    divOculta.style.display = "block";
-  }else{
-    divOculta.style.display = "none";
+//Colorização dos requisitos minimos para senha
+document.addEventListener("DOMContentLoaded", function(){
+
+  document.forms[0].onsubmit = function(e){
+     return val(e);
   }
-});
+  
+  nova_senha.oninput = function(e){
+     val(e);
+  }
+  
+  function val(){
+     v = nova_senha.value,
+     cor = "transparent",
+     filledColor = "#D8FFCD"
+  
+     // verifica se tem 6 caracteres ou mais
+     if(v.match(/.{8,}/)){
+        barra_caracter.style.backgroundColor = filledColor;
+     }else{
+        barra_caracter.style.backgroundColor = cor;
+     }
+  
+     // verifica se tem ao menos uma letra maiúscula
+     if(v.match(/[A-Z]{1,}/)){
+        barra_maiuscula.style.backgroundColor = filledColor;
+     }else{
+        barra_maiuscula.style.backgroundColor = cor;
+     }
+      
+    // verifica de tem ao menos uma letra minúscula
+     if(v.match(/[a-z]{1,}/)){
+        barra_minuscula.style.backgroundColor = filledColor;
+     }else{
+        barra_minuscula.style.backgroundColor = cor;
+     }
+  
+     // verifica de tem ao menus um número
+     if(v.match(/[0-9]{1,}/)){
+        barra_number.style.backgroundColor = filledColor;
+     }else{
+        barra_number.style.backgroundColor = cor;
+     }
+    
+    // verifica de tem ao menus um número
+     if(v.match(/[~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<]/)){
+        barra_especial.style.backgroundColor = filledColor;
+     }else{
+        barra_especial.style.backgroundColor = cor;
+     }
+  }
+  });
 
 
 
