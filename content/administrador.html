@@ -17,6 +17,9 @@ session_start();
     <!--Compilação JS Materialize-->
     <script src="../assets/libs/materialize/js/materialize.min.js"></script>
 
+    <!--JQuery - ViaCEP-->
+    <!-- Adicionando JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     
     <title>Document</title>
 
@@ -255,20 +258,30 @@ session_start();
                     <label for="local">Nome do local de trabalho</label>
                 </div>
                 <div class="input-field col s3">
-                    <input id="cep" type="text" class="validate">
+                    <input id="cep" type="text" class="validate" maxlength="9">
                     <label for="cep">CEP</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s8">
-                    <input id="local" type="text" class="validate">
-                    <label for="local">Endereço</label>
+                    <input id="rua" type="text" class="validate" disabled>
                 </div>
-                <div class="input-field col s3">
-                    <input id="numero" type="text" class="validate">
-                    <label for="numero">Número</label>
+                <div class="input-field col s4">
+                    <input id="bairro" type="text" class="validate" disabled>
                 </div>
             </div>
+            <div class="row">
+              <div class="input-field col s6">
+                  <input id="cidade" type="text" class="validate" disabled>
+              </div>
+              <div class="input-field col s1">
+                  <input id="uf" type="text" class="validate" disabled>
+              </div>
+              <div class="input-field col s3">
+                <input id="numero" type="text" class="validate">
+                <label for="numero">Número</label>
+            </div>
+          </div>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-light btn-flat">Cancelar</a>
@@ -278,5 +291,6 @@ session_start();
 
 <!--Script's-->
 <script src="../assets/js/initialize.js"></script>
+<script src="../assets/js/viacep.js"></script>
 </body>
 </html>
