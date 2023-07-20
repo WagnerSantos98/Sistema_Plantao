@@ -139,35 +139,62 @@
                 <div id="test2" class="col s12">Configurações</div>
             </div>
 
-            <!--Button Action - Criação de Equipe-->
-            <div class="fixed-action-btn">
-                <a href="#modal-cadastro" class="waves-effect waves-light btn-floating btn-large blue btn modal-trigger">
-                    <i class="material-icons">add</i>
-                </a>
+            <!--Floatingbuttons - Inserção de novos usuários, locais de trabalho e função-->
+            <div class="fixed-action-btn horizontal click-to-toggle spin-close">
+              <a class="btn-floating btn-large blue">
+              <i class="material-icons">apps</i>
+              </a>
+              <ul>
+              <li title="Local de Trabalho"><a class="waves-effec waves-light btn-floating red modal-trigger" href="#modal-local"><i class="material-icons">business</i></a></li>
+              <li title="Usuário"><a class="waves-effec waves-light btn-floating green modal-trigger" href="#modal-usuario"><i class="material-icons">add</i></a></li>
+              <li title="Equipe"><a class="waves-effec waves-light btn-floating yellow darken-1 modal-trigger" href="#modal-funcao"><i class="material-icons">group_add</i></a></li>
+              </ul>
             </div>
+
+            
+            
         </div>
       </div>
     <!--Tabs-->
 
     <!--Modal de cadastro de usuário-->
-    <div id="modal-cadastro" class="modal">
+    <div id="modal-usuario" class="modal">
         <div class="modal-content">
         <h5 class="title">Novo usuário</h5>
         <img src="../assets/libs/materialize/img/yuna.jpg" class="circle" alt="">
         <div class="row">
             <form class="col s12">
               <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                   <input id="nome" type="text" class="validate">
                   <label for="nome">Nome completo*</label>
                 </div>
+              </div>
+              <div class="row">
                 <div class="input-field col s6">
                   <input id="email" type="email" class="validate">
                   <label for="email">Email*</label>
                 </div>
+                <div class="input-field col s6">
+                  <select>
+                    <option selected disabled>Selecione</option>
+                    <option>Colaborador</option>
+                    <option>Administrador</option>
+                    <option>Plantonista</option>
+                    <option>Enfermeiro</option>
+                  </select>
+                    <label>Funções</label>
+              </div>
               </div>
               <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
+                  <select>
+                    <option selected disabled>Selecione</option>
+                    
+                  </select>
+                  <label>Local de Trabalho</label>
+                </div>
+                <div class="input-field col s6">
                   <input id="identificador" type="text" class="validate">
                   <label for="identificador">Identificador interno</label>
                 </div>
@@ -196,6 +223,54 @@
             <a class="waves-effect waves-light btn">Cadastrar</a>
         </div>
     </div>
+
+    <!--Modal - Adicionar função-->
+        <div id="modal-funcao" class="modal">
+            <div class="modal-content">
+            <h4>Nova função</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="funcao" type="text" class="validate">
+                    <label for="funcao">Nome da função</label>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-light btn-flat">Cancelar</a>
+            <a href="#!" class="waves-effect waves-green btn blue">Salvar</a>
+            </div>
+        </div>
+
+        <!--Modal - Adicionar Local de trabalho-->
+        <div id="modal-local" class="modal">
+            <div class="modal-content">
+            <h4>Local de trabalho</h4>
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="local" type="text" class="validate">
+                    <label for="local">Nome do local de trabalho</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="cep" type="text" class="validate">
+                    <label for="cep">CEP</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="local" type="text" class="validate">
+                    <label for="local">Endereço</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="numero" type="text" class="validate">
+                    <label for="numero">Número</label>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-light btn-flat">Cancelar</a>
+                <a href="#!" class="waves-effect waves-green btn blue">Salvar</a>
+            </div>
+        </div>
 
 <!--Script's-->
 <script src="../assets/js/initialize.js"></script>

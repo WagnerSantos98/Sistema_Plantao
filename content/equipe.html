@@ -75,10 +75,13 @@
                 </div>
                 <div class="input-field col s6">
                     <select>
-                        <option value="" disabled selected>Selecione...</option>
-                        <option value="1">Plantonista</option>
-                    </select>
-                    <label>Equipe</label>
+                        <option selected disabled>Selecione...</option>
+                        <option>Colaborador</option>
+                        <option>Administrador</option>
+                        <option>Plantonista</option>
+                        <option>Enfermeiro</option>
+                      </select>
+                      <label>Equipe</label>
                 </div>
               </div>
             </form>
@@ -103,6 +106,7 @@
                                     </label></th>
                                   <th>Nome</th>
                                   <th>Email</th>
+                                  <th>Função</th>
                                   <th>
                                     <label>Dias da semana</label><br>
                                     <label>
@@ -139,7 +143,7 @@
                             </thead>
                     
                             <tbody>
-                              
+                              <!--Retorno das informações-->
                             </tbody>
                           </table><br>
                           <ul class="pagination">
@@ -156,70 +160,15 @@
                 </ul>
             </div>
           </div>
-          
-        <!--Actions - Menu de inserção de local de trabalho e equipe-->
-        <div class="fixed-action-btn horizontal click-to-toggle spin-close">
-            <a class="btn-floating btn-large blue">
-            <i class="material-icons">apps</i>
-            </a>
-            <ul>
-            <li title="Local de Trabalho"><a class="waves-effec waves-light btn-floating red modal-trigger" href="#modal-local"><i class="material-icons">business</i></a></li>
-            <li title="Equipe"><a class="waves-effec waves-light btn-floating yellow darken-1 modal-trigger" href="#modal-equipe"><i class="material-icons">group_add</i></a></li>
-            </ul>
-        </div>
 
-        <!--Modal - Adicionar Local de trabalho-->
-        <div id="modal-equipe" class="modal">
-            <div class="modal-content">
-            <h4>Nova equipe</h4>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="equipe" type="text" class="validate">
-                    <label for="equipe">Nome da Equipe</label>
-                </div>
-            </div>
-            </div>
-            <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-light btn-flat">Cancelar</a>
-            <a href="#!" class="waves-effect waves-green btn blue">Salvar</a>
-            </div>
-        </div>
-
-        <!--Modal - Adicionar Equipe-->
-        <div id="modal-local" class="modal">
-            <div class="modal-content">
-            <h4>Local de trabalho</h4>
-            <div class="row">
-                <div class="input-field col s8">
-                    <input id="local" type="text" class="validate">
-                    <label for="local">Nome do local de trabalho</label>
-                </div>
-                <div class="input-field col s3">
-                    <input id="cep" type="text" class="validate">
-                    <label for="cep">CEP</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s8">
-                    <input id="local" type="text" class="validate">
-                    <label for="local">Endereço</label>
-                </div>
-                <div class="input-field col s3">
-                    <input id="numero" type="text" class="validate">
-                    <label for="numero">Número</label>
-                </div>
-            </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-light btn-flat">Cancelar</a>
-                <a href="#!" class="waves-effect waves-green btn blue">Salvar</a>
-            </div>
-        </div>
+        
 
        </div>
       </div>
 
       <!--Script's-->
       <script src="../assets/js/initialize.js"></script>
+
+      
 </body>
 </html>
