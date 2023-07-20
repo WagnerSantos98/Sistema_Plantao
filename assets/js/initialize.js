@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
   
   function val(){
      v = nova_senha.value,
-     cor = "transparent",
+     cor = "#ffb5b5",
      filledColor = "#D8FFCD"
   
      // verifica se tem 6 caracteres ou mais
