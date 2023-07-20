@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Dropdown.init(elems, options);
 });
 
+//Perfil usuário - ocultar e exibir div para alteração de senha
+document.getElementById("btnAlter").addEventListener("click", function(){
+  var divOculta = document.getElementById("alterPassword");
+  if(divOculta.style.display === "none"){
+    divOculta.style.display = "block";
+  }else{
+    divOculta.style.display = "none";
+  }
+});
+
 
 
 //FullCalendar

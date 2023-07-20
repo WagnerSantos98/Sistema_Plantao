@@ -32,7 +32,7 @@
             <li><a href="#!">Equipes</a></li>
             <li><a href="#!">Relatórios</a></li>
             <li><a href="#!">Configurações</a></li>
-            <li><a href="#!"><i class="material-icons">person</i></a></li>
+            <li><a href="#modal-usuario" class="modal-trigger"><i class="material-icons">person</i></a></li>
             <li><a href="#!"><i class="material-icons">logout</i></a></li>
           </ul>
         </div>
@@ -45,7 +45,7 @@
           <div class="background">
             <img src="assets/libs/materialize/img/office.jpg">
           </div>
-          <a href="#user"><img class="circle" src="assets/libs/materialize/img/yuna.jpg"></a>
+          <a href="#user"><img class="circle" src="../assets/libs/materialize/img/yuna.jpg"></a>
           <a href="#name"><span class="white-text name">John Doe</span></a>
           <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
         </div></li>
@@ -141,6 +141,76 @@
       </div>
 
       <!--Modal usuário-->
+      <div id="modal-usuario" class="modal">
+        <div class="modal-content">
+          <h4>Perfil</h4>
+          <a href="#user"><img class="circle" src="../assets/libs/materialize/img/yuna.jpg"></a>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="Placeholder" id="nome" type="text" class="validate">
+                  <label for="nome">Nome</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="Placeholder" id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="contato" type="text" class="validate">
+                  <label for="contato">Contato</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="cpf" type="text" class="validate">
+                  <label for="cpf">CPF</label>
+                </div>
+                <i class="material-icons">lock</i><a href="#!" id="btnAlter">Alterar senha</a>
+              </div>
+            </form>
+          </div>       
 
+          <!--Div - oculta para alteração de senha-->
+          <div class="row row-oculta" id="alterPassword">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="senha_atual" type="password" class="validate">
+                  <label for="senha_atual">Senha atual</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="nova_senha" type="password" class="validate">
+                  <label for="nova_senha">Nova senha</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="confirm_senha" type="password" class="validate">
+                  <label for="confirm_senha">Confirmar senha</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+
+<script>
+//Perfil usuário - ocultar e exibir div para alteração de senha
+document.getElementById("btnAlter").addEventListener("click", function(){
+  var divOculta = document.getElementById("alterPassword");
+  if(divOculta.style.display === "none"){
+    divOculta.style.display = "block";
+  }else{
+    divOculta.style.display = "none";
+  }
+});
+</script>
 </body>
 </html>
