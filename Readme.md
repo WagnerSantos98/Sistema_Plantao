@@ -5,4 +5,4 @@
     - Fullcalendar - v6.1.8
 
     Back-end
-    - PHP
+    - PHP - v8.2.8
