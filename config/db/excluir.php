@@ -2,7 +2,7 @@
 include_once('./conexao.php');
 session_start();
 
-//Exclusão de usuário
+//Exclusão de usuário - tela de administrador
 $id_usuario = filter_input(INPUT_GET, 'id_usuario', FILTER_SANITIZE_NUMBER_INT);
 if(!empty($id_usuario)){
     $sql_excluir_usuario = "DELETE FROM tb_usuarios WHERE id_usuario = '$id_usuario'";
