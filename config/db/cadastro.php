@@ -4,7 +4,7 @@ include_once('./conexao.php');
 session_start();
 error_reporting(0);
 
-//Cadstro de usuário
+//Cadstro de usuário - tela administrar
 if(isset($_POST['btn-cadastrar-usuario'])){
     $nome = $_POST['nome'];
     $email = $_POST['email'];
