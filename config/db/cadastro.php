@@ -19,7 +19,7 @@ if(isset($_POST['btn-cadastrar-usuario'])){
                     $sql_usuarios = mysqli_query($con, $sql_usuario);
 }
 
-//Cadastro de função
+//Cadastro de função - tela administrar
 if(isset($_POST['btn-cadastrar-funcao'])){
     $nome_funcao = $_POST['nome_funcao'];
 
@@ -28,7 +28,7 @@ if(isset($_POST['btn-cadastrar-funcao'])){
     $sql_funcoes = mysqli_query($con, $sql_funcao);
 }
 
-//Cadastro de local de trabalho
+//Cadastro de local de trabalho - tela administrar
 if(isset($_POST['btn-cadastrar-local'])){
     $nome_local = $_POST['nome_local'];
     $cep = $_POST['cep'];
