@@ -95,6 +95,30 @@ document.addEventListener("DOMContentLoaded", function(){
   }
   });
 
+//Adicionar imagem - tela administrar
+const customButton = document.getElementById('customButton');
+        const imageInput = document.getElementById('imageInput');
+        const previewImage = document.getElementById('previewImage');
+
+        // Ao clicar no botão personalizado, aciona o clique no campo de seleção de arquivo
+        customButton.addEventListener('click', function() {
+            imageInput.click();
+        });
+
+        imageInput.addEventListener('change', function() {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.addEventListener('load', function() {
+                    previewImage.src = reader.result;
+                    previewImage.style.display = 'inline'; // Exibe a imagem
+                });
+
+                reader.readAsDataURL(file);
+            }
+        });
+
 //Gerador de senha aleatória
 function generateRandomPassword(length){
   const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=';

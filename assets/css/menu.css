@@ -1,5 +1,10 @@
 :root{
     --color-menu: #039be5;
+    --secundary-color: #e52903;
+    --switch-disable-lever:#d9786b;
+    --switch-disable-color: #e52903;
+    --switch-enable-lever:#7dd96b;
+    --switch-enable-color: #9de503;
     --color-menu-active: #6bb1d9;
     --primary-color: #fff;
     --sidenav-color-icons: #eee;
@@ -46,17 +51,29 @@ nav{
 }
 
 /*Button table edit and delete*/
-.btn-edit, .btn-delete{
+.btn-edit{
     color: var(--color-menu);
+}
+
+.btn-delete{
+    color: var(--secundary-color);
 }
 
 /*Switch - Administrador*/
 .switch label input[type=checkbox]:checked+.lever {
-    background-color: var(--color-menu-active);
+    background-color: var(--switch-enable-lever);
 }
 
 .switch label input[type=checkbox]:checked+.lever:after {
-    background-color: var(--color-menu);
+    background-color: var(--switch-enable-color);
+}
+
+.switch label .lever:after{
+    background-color: var(--switch-disable-color);
+}
+
+.switch label .lever{
+    background-color: var(--switch-disable-lever);
 }
 
 /*Tabs -  tela Administrador*/
@@ -90,6 +107,41 @@ nav{
   height: 10px;
   border-radius: 50%;
   border: 1px solid #000;  
+}
+
+/*Imagem - tela administrar*/
+ /* Estilizações do botão personalizado */
+ #customButton {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--color-menu);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 40px;
+}
+
+/* Oculta o campo de seleção de arquivo padrão */
+#imageInput {
+    display: none;
+}
+
+/* Estilizações adicionais para exibição da imagem */
+#previewImage {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+
+#btn-cadastrar-usuario{
+    float: right;
+    background-color: var(--color-menu);
+}
+
+#btn-cancelar-usuario{
+    float: right;
+    background-color: var(--secundary-color);
+    margin-right: 15px;
 }
 
 /*Buttons -  semana tela equipe*/

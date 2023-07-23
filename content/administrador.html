@@ -104,7 +104,7 @@
                                         <option>Plantonista</option>
                                         <option>Enfermeiro</option>
                                       </select>
-                                      <label>Funções</label>
+                                      <label>Função</label>
                                 </div>
                               </th>
                               <th>
@@ -164,21 +164,24 @@
     <div id="modal-usuario" class="modal">
         <div class="modal-content">
         <h5 class="title">Novo usuário</h5>
-        <img src="../assets/libs/materialize/img/yuna.jpg" class="circle" alt="">
         <div class="row">
             <form class="col s12">
               <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s3">
+                  <label>Adicione uma imagem</label><br><br>
+                  <img id="previewImage" src="#" alt="Imagem selecionada" style="display: none;" class="circle"><br>
+                  <button type="button" id="customButton"><i class="material-icons">camera_alt</i></button>
+                  <input type="file" id="imageInput" accept="image/*">
+                </div>
+                <div class="input-field col s8">
                   <input id="nome" type="text" class="validate">
                   <label for="nome">Nome completo*</label>
                 </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s4">
                   <input id="email" type="email" class="validate">
                   <label for="email">Email*</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s4">
                   <select>
                     <option selected disabled>Selecione</option>
                     <option>Colaborador</option>
@@ -186,8 +189,8 @@
                     <option>Plantonista</option>
                     <option>Enfermeiro</option>
                   </select>
-                    <label>Funções</label>
-              </div>
+                    <label>Funções*</label>
+                </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
@@ -195,40 +198,39 @@
                     <option selected disabled>Selecione</option>
                     
                   </select>
-                  <label>Local de Trabalho</label>
+                  <label>Local de Trabalho*</label>
                 </div>
                 <div class="input-field col s6">
                   <input id="identificador" type="text" class="validate">
-                  <label for="identificador">Identificador interno</label>
+                  <label for="identificador">Identificador interno*</label>
                 </div>
               </div>
               <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s3">
                     <input id="contato" type="text" class="validate">
                     <label for="contato">Contato*</label>
                   </div>
-                  <div class="input-field col s6">
+                  <div class="input-field col s3">
                     <input id="cpf" type="text" class="validate">
                     <label for="cpf">CPF*</label>
                   </div>
+                  <div class="input-field col s3">
+                    <input id="generatedSenha" type="text" class="validate" readonly>
+                    <labe>Senha Temporária*</label>
+                  </div>
+                  <div class="input-field col s3">
+                    <a class="waves-effect waves-light btn" onclick="generateSenha()"><i class="material-icons">lock</i></a>
+                  </div>
               </div>
-              <div class="row">
-                <div class="input-field col s6">
-                  <labe>Senha Temporária</label>
-                  <input id="generatedSenha" type="text" class="validate" readonly>
-                  
-                </div>
-                <div class="input-field col s3">
-                  <a class="waves-effect waves-light btn" onclick="generateSenha()"><i class="material-icons">lock</i></a>
-                </div>
+              <div class="row row-actions">
+                <a class="waves-effect waves-light btn" id="btn-cadastrar-usuario">Cadastrar</a>
+                <a class="modal-close waves-effect waves-light btn" id="btn-cancelar-usuario">Cancelar</a>
               </div>
             </form>
           </div>
         </div>
         
-        <div class="modal-footer">
-            <a class="waves-effect waves-light btn">Cadastrar</a>
-        </div>
+        
     </div>
 
     <!--Modal - Adicionar função-->
