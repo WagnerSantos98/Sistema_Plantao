@@ -95,6 +95,22 @@ document.addEventListener("DOMContentLoaded", function(){
   }
   });
 
+//Gerador de senha aleatória
+function generateRandomPassword(length){
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=';
+  let senha = '';
+  for(let i = 0; i < length; i++){
+    const randomIndex = Math.floor(Math.random() * caracteres.length);
+    senha += caracteres.charAt(randomIndex);
+  }
+  return senha;
+}
+
+function generateSenha(){
+  const generateRandomPasswordInput = document.getElementById('generatedSenha');
+  generateRandomPasswordInput.value = generateRandomPassword(12);
+}
+
 
 
 //FullCalendar
