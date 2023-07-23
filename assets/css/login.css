@@ -21,3 +21,8 @@ body{
 #login-page{
     width: 500px;
 }
+
+.modal-esqueci{
+    width: 400px;
+    height: 300px;
+}
