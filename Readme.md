@@ -3,6 +3,15 @@
 ## Visão geral do projeto
 
 ## Requisitos
+Setup de ambiente:
+    PHP - v.8.2.4
+
+## Como rodar na máquina?
+    Instale o Xampp - Windows e Linux
+    Clone o projeto
+    Cole o projeto na pasta htdocs do Xampp
+    Excecute os serviços do Xampp
+    Faça a importação do banco de dados
 
 ## Framewoorks
     - Materializecss - v1.0.0
@@ -11,7 +20,7 @@
     - SweetAlert2
 
     Back-end
-    - PHP - v8.2.7
+    - PHP - v8.2.4
 
 ## Diagramas
 
