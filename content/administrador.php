@@ -7,8 +7,6 @@
 
   $sql_trabalho_return = "SELECT idLocal, nome_local FROM tb_locais";
   $result_trabalho = mysqli_query($con, $sql_trabalho_return);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -212,8 +210,8 @@
                   <label>Local de Trabalho*</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="identificador" name="identificador" type="text" class="validate">
-                  <label for="identificador">Identificador interno*</label>
+                  <input id="re" name="re" type="text" class="validate">
+                  <label for="re">Registro interno*</label>
                 </div>
               </div>
               <div class="row">
@@ -234,7 +232,7 @@
                   </div>
               </div>
               <div class="row">
-                <button type="submit" class="waves-effect waves-green btn blue btn-save" name="btn_salvar_usuario">Salvar</button>
+                <button type="submit" class="waves-effect waves-green btn blue btn-save" name="btn_salvar_user">Salvar</button>
                 <a href="#!" class="modal-close waves-effect waves-light btn-flat btn-cancel" >Cancelar</a>
               </div>
             </form>

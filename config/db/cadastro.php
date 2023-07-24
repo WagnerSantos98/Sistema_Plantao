@@ -5,20 +5,19 @@ session_start();
 error_reporting(0);
 
  //Cadstro de usuário - tela administrador
- if(isset($_POST['btn_salvar_usuario'])){
+ if(isset($_POST['btn_salvar_user'])){
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $funcao = $_POST['funcao'];
     $local_trabalho = $_POST['local_trabalho'];
-    $identificador = $_POST['identificador'];
+    $re = $_POST['re'];
     $contato = $_POST['contato'];
     $cpf = $_POST['cpf'];
-    $senha_temp = md5($_POST['senha_temp']);
-  
-  
-    $sql_usuario = "INSERT INTO tb_usuarios(nome, email, funcao, local_trabalho, identificador, contato, cpf, senha_temp)
-                    VALUES('$nome', '$email', '$funcao', '$local_trabalho', '$identificador', '$contato', '$cpf', '$senha_temp');";
-                    $sql_usuarios = mysqli_query($con, $sql_usuario);
+    $senha_temp = $_POST['senha_temp'];
+
+    $sql_user = "INSERT INTO tb_usuarios(nome, email, funcao, local_trabalho, re, contato, cpf, senha_temp)
+                    VALUES('$nome', '$email', '$funcao', '$local_trabalho', '$contato', '$cpf', '$senha_temp');";
+                    $sql_users = mysqli_query($con, $sql_user);
 }
 
 //Cadastro de função - tela administrador
@@ -45,8 +44,7 @@ if(isset($_POST['btn_salvar_local'])){
                     $sql_locais = mysqli_query($con, $sql_local);
 }
 
-$message = "Mensagem de erro ou depuração que você deseja registrar.";
-error_log($message, 3, "/caminho/do/arquivo/de/log/meu_log.txt");
+
 
 
 ?>
