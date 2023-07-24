@@ -19,7 +19,7 @@
 PDF - contendo um passo a passo do sistema
 
 ## APIs
-    ViaCEP
+    ViaCEP - API de localização de endereço se utilizando do campo CEP inserido dentro do projeto, consome uma base de dados integrada aos Correios para assim retornar as informações nos campos solicitados.
 
 ## Testes
 
