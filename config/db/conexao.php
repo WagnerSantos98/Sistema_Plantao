@@ -1,11 +1,10 @@
 <?php
 
-//Conexão com banco de dados
-    $servidor = "localhost";
-    $usuario = "root";
-    $senha = "";
-    $dbname = "db_sistema";
+$servidor = "localhost";
+$usuario = "root";
+$senha = "";
+$dbname = "db_sistema_plantao";
 
-    $con = mysqli_connect($servidor, $usuario, $senha, $dbname);
+$con = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 ?>

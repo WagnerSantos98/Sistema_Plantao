@@ -1,3 +1,15 @@
+<?php
+  include_once('../config/db/conexao.php');
+  session_start();
+
+  $sql_funcao_return = "SELECT idFuncao, nome_funcao FROM tb_funcoes";
+  $result_funcao = mysqli_query($con, $sql_funcao_return);
+
+  $sql_trabalho_return = "SELECT idLocal, nome_local FROM tb_locais";
+  $result_trabalho = mysqli_query($con, $sql_trabalho_return);
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -165,66 +177,65 @@
         <div class="modal-content">
         <h5 class="title">Novo usuário</h5>
         <div class="row">
-            <form class="col s12">
+            <form action="../config/db/cadastro.php" method="POST">
               <div class="row">
-                <div class="input-field col s3">
-                  <label>Adicione uma imagem</label><br><br>
-                  <img id="previewImage" src="#" alt="Imagem selecionada" style="display: none;" class="circle"><br>
-                  <button type="button" id="customButton"><i class="material-icons">camera_alt</i></button>
-                  <input type="file" id="imageInput" accept="image/*">
-                </div>
                 <div class="input-field col s8">
-                  <input id="nome" type="text" class="validate">
+                  <input id="nome" name="nome" type="text" class="validate">
                   <label for="nome">Nome completo*</label>
                 </div>
                 <div class="input-field col s4">
-                  <input id="email" type="email" class="validate">
+                  <input id="email" name="email" type="email" class="validate">
                   <label for="email">Email*</label>
                 </div>
                 <div class="input-field col s4">
-                  <select>
-                    <option selected disabled>Selecione</option>
-                    <option>Colaborador</option>
-                    <option>Administrador</option>
-                    <option>Plantonista</option>
-                    <option>Enfermeiro</option>
+                  <select name="funcao">
+                    <option value="" selected disabled>Selecione</option>
+                    <?php
+                    while($row = mysqli_fetch_assoc($result_funcao)){
+                      echo "<option value=" . $row['idFuncao'] . "'>" . $row['nome_funcao'] . "</option>";
+                    }
+                    ?>
                   </select>
-                    <label>Funções*</label>
+                    <label>Função</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
-                  <select>
-                    <option selected disabled>Selecione</option>
-                    
+                  <select name="local_trabalho">
+                    <option value="" selected disabled>Selecione</option>
+                    <?php
+                    while($row = mysqli_fetch_assoc($result_trabalho)){
+                      echo "<option value=" . $row['idLocal'] . "'>" . $row['nome_local'] . "</option>";
+                    }
+                    ?>
                   </select>
                   <label>Local de Trabalho*</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="identificador" type="text" class="validate">
+                  <input id="identificador" name="identificador" type="text" class="validate">
                   <label for="identificador">Identificador interno*</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s3">
-                    <input id="contato" type="text" class="validate">
+                    <input id="contato" name="contato" type="text" class="validate">
                     <label for="contato">Contato*</label>
                   </div>
                   <div class="input-field col s3">
-                    <input id="cpf" type="text" class="validate">
+                    <input id="cpf" name="cpf" type="text" class="validate">
                     <label for="cpf">CPF*</label>
                   </div>
                   <div class="input-field col s3">
-                    <input id="generatedSenha" name="senha" type="text" class="validate" readonly>
+                    <input id="generatedSenha" name="senha_temp" type="text" class="validate">
                     <labe>Senha Temporária*</label>
                   </div>
                   <div class="input-field col s3">
                     <a class="waves-effect waves-light btn" onclick="generateSenha()"><i class="material-icons">lock</i></a>
                   </div>
               </div>
-              <div class="row row-actions">
-                <a class="waves-effect waves-light btn" id="btn-cadastrar-usuario">Cadastrar</a>
-                <a class="modal-close waves-effect waves-light btn" id="btn-cancelar-usuario">Cancelar</a>
+              <div class="row">
+                <button type="submit" class="waves-effect waves-green btn blue btn-save" name="btn_salvar_usuario">Salvar</button>
+                <a href="#!" class="modal-close waves-effect waves-light btn-flat btn-cancel" >Cancelar</a>
               </div>
             </form>
           </div>
@@ -241,16 +252,17 @@
             <div class="row">
               <form action="../config/db/cadastro.php" method="POST">
                 <div class="input-field col s12">
-                    <input id="funcao" type="text" class="validate">
+                    <input id="funcao" name="nome_funcao" type="text" class="validate">
                     <label for="funcao">Nome da função</label>
+                </div>
+                <div class="row">
+                    <button type="submit" class="waves-effect waves-green btn blue btn-save" name="btn_salvar_funcao">Salvar</button>
+                    <a href="#!" class="modal-close waves-effect waves-light btn-flat btn-cancel" >Cancelar</a>
                 </div>
               </form>
             </div>
             </div>
-            <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-light btn-flat">Cancelar</a>
-            <a href="#!" class="waves-effect waves-green btn blue">Salvar</a>
-            </div>
+            
         </div>
 
         <!--Modal - Adicionar Local de trabalho-->
@@ -258,7 +270,7 @@
             <div class="modal-content">
             <h4>Local de trabalho</h4>
             <div class="row">
-              <form action="../config/db/cadastro.php" method="POST"></form>
+              <form action="../config/db/cadastro.php" method="POST">
               <div class="row">
                   <div class="input-field col s8">
                       <input id="nome_local" name="nome_local" type="text" class="validate">
@@ -271,29 +283,30 @@
               </div>
               <div class="row">
                   <div class="input-field col s8">
-                      <input id="rua" name="rua" type="text" class="validate" disabled>
+                      <input id="rua" name="rua" type="text" class="validate">
                   </div>
                   <div class="input-field col s4">
-                      <input id="bairro" name="bairro" type="text" class="validate" disabled>
+                      <input id="bairro" name="bairro" type="text" class="validate">
                   </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
-                    <input id="cidade" name="cidade" type="text" class="validate" disabled>
+                    <input id="cidade" name="cidade" type="text" class="validate">
                 </div>
                 <div class="input-field col s1">
-                    <input id="uf" name="uf" type="text" class="validate" disabled>
+                    <input id="uf" name="uf" type="text" class="validate">
                 </div>
                 <div class="input-field col s3">
                   <input id="numero" name="numero" type="text" class="validate">
                   <label for="numero">Número</label>
                 </div>
               </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-light btn-flat" name="btn-cadastrar-local">Cancelar</a>
-                <a href="#!" class="waves-effect waves-green btn blue">Salvar</a>
-            </div>
+              <div class="row">
+                <button type="submit" class="waves-effect waves-light btn blue btn-save" name="btn_salvar_local">Salvar</button>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat btn-cancel">Cancelar</a>
+              </div>
+            </form>
+            </div>            
         </div>
 
 <!--Script's-->

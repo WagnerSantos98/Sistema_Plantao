@@ -109,6 +109,11 @@ nav{
   border: 1px solid #000;  
 }
 
+/*Tela Administrador*/
+.btn-save, .btn-cancel{
+    float: right;
+}
+
 /*Imagem - tela administrar*/
  /* Estilizações do botão personalizado */
  #customButton {
