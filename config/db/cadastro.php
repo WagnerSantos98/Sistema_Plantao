@@ -16,8 +16,8 @@ error_reporting(0);
     $senha_temp = $_POST['senha_temp'];
 
     $sql_user = "INSERT INTO tb_usuarios(nome, email, funcao, local_trabalho, re, contato, cpf, senha_temp)
-                 VALUES('$nome', '$email', '$funcao', '$local_trabalho', '$re', '$contato', '$cpf', '$senha_temp');";
-    $sql_users = mysqli_query($con, $sql_user);
+                    VALUES('$nome', '$email', '$funcao', '$local_trabalho', '$contato', '$cpf', '$senha_temp');";
+                    $sql_users = mysqli_query($con, $sql_user);
 }
 
 //Cadastro de função - tela administrador
@@ -43,5 +43,8 @@ if(isset($_POST['btn_salvar_local'])){
                     VALUES('$nome_local', '$cep', '$rua', '$bairro', '$cidade', '$uf', '$numero');";
                     $sql_locais = mysqli_query($con, $sql_local);
 }
+
+
+
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-include('../config/db/consultas.php');
+  include_once('../config/db/consultas.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -187,7 +187,7 @@ include('../config/db/consultas.php');
                     }
                     ?>
                   </select>
-                    <label>Função</label>
+                    <label>Função</label>   
                 </div>
               </div>
               <div class="row">

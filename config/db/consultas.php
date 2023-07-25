@@ -8,4 +8,7 @@
 
   $sql_trabalho_return = "SELECT idLocal, nome_local FROM tb_locais";
   $result_trabalho = mysqli_query($con, $sql_trabalho_return);
+
+
+
 ?>
