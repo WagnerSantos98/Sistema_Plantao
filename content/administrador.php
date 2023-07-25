@@ -1,12 +1,5 @@
 <?php
-  include_once('../config/db/conexao.php');
-  session_start();
-
-  $sql_funcao_return = "SELECT idFuncao, nome_funcao FROM tb_funcoes";
-  $result_funcao = mysqli_query($con, $sql_funcao_return);
-
-  $sql_trabalho_return = "SELECT idLocal, nome_local FROM tb_locais";
-  $result_trabalho = mysqli_query($con, $sql_trabalho_return);
+include('../config/db/consultas.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
