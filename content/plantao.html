@@ -14,10 +14,46 @@
     <script src="../assets/libs/materialize/js/materialize.min.js"></script>
     <script src="../assets/libs/fullcalendar/dist/index.global.min.js"></script>
     <script src="../assets/libs/fullcalendar/core/locale/locales-all.global.js"></script>
+    <script src="../assets/js/initialize.js"></script>
 
     
     <title>Document</title>
 
+    <style>   
+      #external-events {
+        position: fixed;
+        left: 20px;
+        top: 80px;
+        width: 250px;
+        padding: 0 10px;
+        border: 1px solid #ccc;
+        background: #eee;
+        text-align: left;
+      }
+    
+      #external-events h4 {
+        font-size: 16px;
+        margin-top: 0;
+        padding-top: 1em;
+      }
+    
+      #external-events .fc-event {
+        margin: 3px 0;
+        cursor: move;
+      }
+    
+      
+    
+      #calendar-wrap {
+        margin-left: 200px;
+      }
+    
+      #calendar {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+    
+    </style>
     
 </head>
 <body>
@@ -50,14 +86,14 @@
           <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
         </div></li>
         <div class="menu">
-            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">apps</i> Dashboard</a></li>
-            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">calendar_month</i> Plantões</a></li>
-            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">groups</i>Equipes</a></li>
-            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">query_stats</i>Relatórios</a></li>
-            <li><a href="#!" style="color: #fff"><i class="material-icons" style="color: #fff;">settings</i>Configurações</a></li>
+            <li><a href="#!"><i class="material-icons">apps</i> Dashboard</a></li>
+            <li><a href="#!"><i class="material-icons">calendar_month</i> Plantões</a></li>
+            <li><a href="#!"><i class="material-icons">groups</i>Equipes</a></li>
+            <li><a href="#!"><i class="material-icons">query_stats</i>Relatórios</a></li>
+            <li><a href="#!"><i class="material-icons">settings</i>Configurações</a></li>
             <li class="divider"></li>
             <div class="menu-exit">
-                <li><a href="#!" style="color: #fff;"><i class="material-icons" style="color: #fff;">logout</i>Logout</a></li>
+                <li><a href="#!"><i class="material-icons">logout</i>Logout</a></li>
             </div>
         </div>
       </ul>
@@ -65,8 +101,46 @@
       
       <div class="main">
         <div class="container">
-            <div class="container-calendar">
-                <div id='calendar'></div>
+          <div id='wrap'>
+
+            <div id='external-events'>
+              <h4>Local</h4>
+              <select name="" id="">
+                <option value="">Teste</option>
+              </select>
+
+              <h4>Equipe</h4>
+        
+              <div id='external-events-list'>
+                <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                  <div class='fc-event-main'>My Event 1</div>
+                </div>
+                <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                  <div class='fc-event-main'>My Event 2</div>
+                </div>
+                <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                  <div class='fc-event-main'>My Event 3</div>
+                </div>
+                <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                  <div class='fc-event-main'>My Event 4</div>
+                </div>
+                <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                  <div class='fc-event-main'>My Event 5</div>
+                </div>
+              </div>
+
+                
+              <p>
+                <label>
+                  
+                  <input type="checkbox" id="drop-remove"/>
+                  <span for="'drop-remove" class="remove"></span>
+                </label>
+              </p>
+            </div>
+        
+            <div id='calendar-wrap'>
+              <div id='calendar'></div>
             </div>
         </div>
       </div>
