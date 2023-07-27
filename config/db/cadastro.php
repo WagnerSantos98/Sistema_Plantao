@@ -5,20 +5,29 @@ session_start();
 error_reporting(0);
 
  //Cadstro de usuário - tela administrador
- if(isset($_POST['btn_salvar_user'])){
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $funcao = $_POST['funcao'];
-    $local_trabalho = $_POST['local_trabalho'];
-    $re = $_POST['re'];
-    $contato = $_POST['contato'];
-    $cpf = $_POST['cpf'];
-    $senha_temp = $_POST['senha_temp'];
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$funcao_id = $_POST['funcao']; // Aqui está o ID selecionado na select da função
+$local_trabalho_id = $_POST['local_trabalho']; // Aqui está o ID selecionado na select do local de trabalho
+$re = $_POST['re'];
+$contato = $_POST['contato'];
+$cpf = $_POST['cpf'];
+$senha_temp = $_POST['senha_temp'];
 
-    $sql_user = "INSERT INTO tb_usuarios(nome, email, funcao, local_trabalho, re, contato, cpf, senha_temp)
-                    VALUES('$nome', '$email', '$funcao', '$local_trabalho', '$contato', '$cpf', '$senha_temp');";
-                    $sql_users = mysqli_query($con, $sql_user);
+// Monta o SQL de inserção
+$sql_user = "INSERT INTO tb_usuarios (nome, email, funcao, local_trabalho, re, contato, cpf, senha_temp, idFuncao, idLocal)
+             VALUES ('$nome', '$email', (SELECT nome_funcao FROM tb_funcoes WHERE idFuncao = $funcao_id), 
+                     (SELECT nome_local FROM tb_locais WHERE idLocal = $local_trabalho_id), 
+                     '$re', '$contato', '$cpf', '$senha_temp', $funcao_id, $local_trabalho_id);";
+
+// Executa a inserção
+if (mysqli_query($con, $sql_user)) {
+    echo "Registro inserido com sucesso!";
+} else {
+    echo "Erro ao inserir registro: " . mysqli_error($con);
 }
+
+
 
 //Cadastro de função - tela administrador
 if(isset($_POST['btn_salvar_funcao'])){

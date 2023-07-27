@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Compilação CSS - Materialize-->
     <link rel="stylesheet" href="../assets/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../assets/css/menu.css">
     <!--Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,8 +18,8 @@
     <script src="../assets/libs/materialize/js/materialize.min.js"></script>
 
     <!--JQuery - ViaCEP-->
-    <!-- Adicionando JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <title>Document</title>
 
@@ -179,29 +180,29 @@
                   <label for="email">Email*</label>
                 </div>
                 <div class="input-field col s4">
-                  <select name="funcao">
+                  <select name="funcao" id="selectFuncao">
                     <option value="" selected disabled>Selecione</option>
                     <?php
                     while($row = mysqli_fetch_assoc($result_funcao)){
-                      echo "<option value=" . $row['idFuncao'] . "'>" . $row['nome_funcao'] . "</option>";
+                      echo "<option value=" . $row['idFuncao'] . ">" . $row['nome_funcao'] . "</option>";
                     }
                     ?>
                   </select>
-                    <label>Função</label>   
+                  <label>Função</label>      
                 </div>
               </div>
               <div class="row">
-                <div class="input-field col s6">
-                  <select name="local_trabalho">
-                    <option value="" selected disabled>Selecione</option>
-                    <?php
-                    while($row = mysqli_fetch_assoc($result_trabalho)){
-                      echo "<option value=" . $row['idLocal'] . "'>" . $row['nome_local'] . "</option>";
-                    }
-                    ?>
-                  </select>
-                  <label>Local de Trabalho*</label>
-                </div>
+              <div class="input-field col s6">
+                <select name="local_trabalho" id="selectLocalTrabalho">
+                  <option value="" selected disabled>Selecione</option>
+                  <?php
+                  while($row = mysqli_fetch_assoc($result_trabalho)){
+                    echo "<option value=" . $row['idLocal'] . ">" . $row['nome_local'] . "</option>";
+                  }
+                  ?>
+                </select>
+                <label>Local de Trabalho*</label>
+              </div>
                 <div class="input-field col s6">
                   <input id="re" name="re" type="text" class="validate">
                   <label for="re">Registro interno*</label>

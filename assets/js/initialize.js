@@ -135,6 +135,27 @@ function generateSenha(){
   generateRandomPasswordInput.value = generateRandomPassword(12);
 }
 
+ // Função para atualizar o valor do input oculto com o ID da função selecionada
+ function updateSelectedValues() {
+   var selectFuncao = document.getElementById('selectFuncao');
+   var selectLocalTrabalho = document.getElementById('selectLocalTrabalho');
+   
+   var funcaoIdInput = document.getElementById('funcao_id');
+   var localTrabalhoIdInput = document.getElementById('local_trabalho_id');
+   
+   var selectedFuncaoOption = selectFuncao.options[selectFuncao.selectedIndex];
+   var selectedLocalTrabalhoOption = selectLocalTrabalho.options[selectLocalTrabalho.selectedIndex];
+   
+   funcaoIdInput.value = selectedFuncaoOption.value;
+   localTrabalhoIdInput.value = selectedLocalTrabalhoOption.value;
+}
+
+// Adicionar eventos "change" para as selects
+document.getElementById('selectFuncao').addEventListener('change', updateSelectedValues);
+document.getElementById('selectLocalTrabalho').addEventListener('change', updateSelectedValues);
+
+// Chamar a função updateSelectedValues inicialmente para garantir que os valores sejam definidos corretamente
+updateSelectedValues();
 
 
 
