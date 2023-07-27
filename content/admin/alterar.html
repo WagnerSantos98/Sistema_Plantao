@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Adicione os links para os arquivos CSS do Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Adicione o link para o arquivo CSS personalizado (opcional) -->
+  <link rel="stylesheet" href="path/to/your/custom.css">
+
+  <!-- Importe o jQuery (necessário para o Materialize) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Importe os arquivos JS do Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Estrutura básica da modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <h4>Alterar senha</h4>
+          <div class="input-field">
+            <input type="password" id="currentPassword" placeholder="Senha atual">
+            <label for="currentPassword">Senha atual</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="newPassword" placeholder="Nova senha">
+            <label for="newPassword">Nova senha</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="confirmPassword" placeholder="Confirmar nova senha">
+            <label for="confirmPassword">Confirmar nova senha</label>
+          </div>
+          <a class="waves-effect waves-light btn" onclick="alterarSenha()">Alterar Senha</a>
+        </div>
+      </div>
+      
+  
+
+      <script>
+        // Inicializa a modal
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+  // Abre a modal automaticamente quando o documento for carregado
+  $(window).on('load', function() {
+    $('#myModal').modal('open');
+  });
+      
+  $(document).ready(function(){
+    $('.modal').modal({
+      dismissible: false // Impede que a modal seja fechada clicando fora dela
+    });
+  });
+
+  // Função para alterar a senha
+  function alterarSenha() {
+    // Obter os valores dos campos de senha
+    var currentPassword = $('#currentPassword').val();
+    var newPassword = $('#newPassword').val();
+    var confirmPassword = $('#confirmPassword').val();
+
+    // Verificar se a nova senha e a confirmação são iguais
+    if (newPassword !== confirmPassword) {
+      alert('A nova senha e a confirmação devem ser iguais.');
+      return;
+    }
+
+    // Aqui você pode adicionar a lógica para enviar as informações do novo
+    // senha para o servidor e fazer a alteração.
+
+    // Simulação de atualização da senha bem-sucedida (pode ser substituída pela resposta do servidor)
+    var senhaAtualizadaComSucesso = true;
+    
+    if (senhaAtualizadaComSucesso) {
+      // Exemplo de mensagem de sucesso (pode ser substituída pela resposta do servidor)
+      alert('Senha alterada com sucesso!');
+      
+      // Fechar a modal após a alteração de senha bem-sucedida
+      $('#myModal').modal('close');
+    } else {
+      // Exemplo de mensagem de erro (pode ser substituída pela resposta do servidor)
+      alert('Falha ao alterar a senha. Tente novamente.');
+    }
+  }
+      </script>
+      
+  
+</body>
+</html>
