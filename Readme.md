@@ -20,11 +20,11 @@ Setup de ambiente:
     Faça a importação do banco de dados
 
 ## Framewoorks
-    Teconolias e frameworks utilizadas
-    - Materializecss - v1.0.0
-    - Fullcalendar - v6.1.8
-    - ViaCEP
-    - SweetAlert2
+Teconolias e frameworks utilizadas
+- Materializecss - v1.0.0
+- Fullcalendar - v6.1.8
+- ViaCEP
+- SweetAlert2
 
     Back-end
     - PHP - v8.2.4
