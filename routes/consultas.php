@@ -1,5 +1,5 @@
 <?php
-  include_once('conexao.php');
+  include_once('../db/conexao.php');
   session_start();
 
   //Retorno de informações para Select campo Função e Local de Trabalho

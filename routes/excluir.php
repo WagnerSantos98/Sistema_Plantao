@@ -1,5 +1,5 @@
 <?php
-include_once('./conexao.php');
+include_once('../db/conexao.php');
 session_start();
 
 //Exclusão de usuário - tela de administrador

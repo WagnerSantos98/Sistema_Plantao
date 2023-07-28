@@ -35,7 +35,7 @@
             <li><a href="#!">Relatórios</a></li>
             <li><a href="content/administrador.html">Configurações</a></li>
             <li><a href="#modal-usuario" class="modal-trigger"><i class="material-icons">person</i></a></li>
-            <li><a href="content/admin/login.html"><i class="material-icons">logout</i></a></li>
+            <li><a href="db/logout.php"><i class="material-icons">logout</i></a></li>
           </ul>
         </div>
       </nav>
@@ -60,7 +60,7 @@
             <li><a href="content/administrador.html"><i class="material-icons">settings</i>Configurações</a></li>
             <li class="divider"></li>
             <div class="menu-exit">
-                <li><a href="#!"><i class="material-icons">logout</i>Logout</a></li>
+                <li><a href="db/logout.php"><i class="material-icons">logout</i>Logout</a></li>
             </div>
         </div>
       </ul>

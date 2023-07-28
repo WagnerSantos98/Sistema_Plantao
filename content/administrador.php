@@ -1,5 +1,5 @@
 <?php
-  include_once('../config/db/consultas.php');
+  include_once('../routes/consultas.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -169,7 +169,7 @@
         <div class="modal-content">
         <h5 class="title">Novo usuário</h5>
         <div class="row">
-            <form action="../config/db/cadastro.php" method="POST">
+            <form action="../routes/cadastro.php" method="POST">
               <div class="row">
                 <div class="input-field col s8">
                   <input id="nome" name="nome" type="text" class="validate">
@@ -242,7 +242,7 @@
             <h4>Nova função</h4>
             
             <div class="row">
-              <form action="../config/db/cadastro.php" method="POST">
+              <form action="../routes/cadastro.php" method="POST">
                 <div class="input-field col s12">
                     <input id="funcao" name="nome_funcao" type="text" class="validate">
                     <label for="funcao">Nome da função</label>
@@ -262,7 +262,7 @@
             <div class="modal-content">
             <h4>Local de trabalho</h4>
             <div class="row">
-              <form action="../config/db/cadastro.php" method="POST">
+              <form action="../routes/cadastro.php" method="POST">
               <div class="row">
                   <div class="input-field col s8">
                       <input id="nome_local" name="nome_local" type="text" class="validate">
