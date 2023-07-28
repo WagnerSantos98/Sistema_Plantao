@@ -13,7 +13,8 @@
     <!--Compilação JS Materialize-->
     <script src="assets/libs/materialize/js/materialize.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Importe o jQuery (necessário para o Materialize) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!--Script's-->
     <script src="assets/js/initialize.js"></script>
@@ -145,6 +146,7 @@
 
       <!--Modal usuário-->
       <div id="modal-usuario" class="modal">
+
         <div class="modal-content">
           <h4>Perfil</h4>
           <a href="#user"><img class="circle" src="../assets/libs/materialize/img/yuna.jpg"></a>
@@ -210,6 +212,37 @@
         </div>
       </div>
 
+      <!-- Estrutura básica da modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <h4>Alterar senha</h4>
+          <form class="col s12">
+            <div class="row">
+              <p>A nova senha deve ter os seguintes requisitos:</p>
+              <li>Pelo menos um número <div class="box-barra" id="barra_number"></div></li>
+              <li>Pelo menos 8 caracteres <div class="box-barra" id="barra_caracter"></div></li>
+              <li>Pelo menos um caracter maiúsculo <div class="box-barra" id="barra_maiuscula"></div></li>
+              <li>Pelo menos um caracter minúsculo <div class="box-barra" id="barra_minuscula"></div></li>
+              <li>Pelo menos um caracter não alfanuméricos <div class="box-barra" id="barra_especial"></div></li>      
+              <div class="input-field col s6">
+                <input id="senha_atual" type="password" class="validate">
+                <label for="senha_atual">Senha atual</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="nova_senha" type="password" class="validate">
+                <label for="nova_senha">Nova senha</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="confirm_senha" type="password" class="validate">
+                <label for="confirm_senha">Confirmar senha</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
 <script>
 //Perfil usuário - ocultar e exibir div para alteração de senha
 document.getElementById("btnAlter").addEventListener("click", function(){
@@ -220,6 +253,7 @@ document.getElementById("btnAlter").addEventListener("click", function(){
     divOculta.style.display = "none";
   }
 });
+
 </script>
 </body>
 </html>

@@ -135,7 +135,6 @@ function generateSenha(){
   generateRandomPasswordInput.value = generateRandomPassword(12);
 }
 
-
-
+ 
 
 

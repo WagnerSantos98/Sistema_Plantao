@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Adicione os links para os arquivos CSS do Materialize -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <!-- Adicione o link para o arquivo CSS personalizado (opcional) -->
-  <link rel="stylesheet" href="path/to/your/custom.css">
+  <link rel="stylesheet" href="assets/libs/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
 
   <!-- Importe o jQuery (necessário para o Materialize) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- Importe os arquivos JS do Materialize -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/libs/materialize/js/materialize.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -21,19 +19,30 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
           <h4>Alterar senha</h4>
-          <div class="input-field">
-            <input type="password" id="currentPassword" placeholder="Senha atual">
-            <label for="currentPassword">Senha atual</label>
-          </div>
-          <div class="input-field">
-            <input type="password" id="newPassword" placeholder="Nova senha">
-            <label for="newPassword">Nova senha</label>
-          </div>
-          <div class="input-field">
-            <input type="password" id="confirmPassword" placeholder="Confirmar nova senha">
-            <label for="confirmPassword">Confirmar nova senha</label>
-          </div>
-          <a class="waves-effect waves-light btn" onclick="alterarSenha()">Alterar Senha</a>
+          <form class="col s12">
+            <div class="row">
+              <p>A nova senha deve ter os seguintes requisitos:</p>
+              <li>Pelo menos um número <div class="box-barra" id="barra_number"></div></li>
+              <li>Pelo menos 8 caracteres <div class="box-barra" id="barra_caracter"></div></li>
+              <li>Pelo menos um caracter maiúsculo <div class="box-barra" id="barra_maiuscula"></div></li>
+              <li>Pelo menos um caracter minúsculo <div class="box-barra" id="barra_minuscula"></div></li>
+              <li>Pelo menos um caracter não alfanuméricos <div class="box-barra" id="barra_especial"></div></li>      
+              <div class="input-field col s6">
+                <input id="senha_atual" type="password" class="validate">
+                <label for="senha_atual">Senha atual</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="nova_senha" type="password" class="validate">
+                <label for="nova_senha">Nova senha</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="confirm_senha" type="password" class="validate">
+                <label for="confirm_senha">Confirmar senha</label>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       
@@ -68,26 +77,19 @@
       alert('A nova senha e a confirmação devem ser iguais.');
       return;
     }
-
-    // Aqui você pode adicionar a lógica para enviar as informações do novo
-    // senha para o servidor e fazer a alteração.
-
-    // Simulação de atualização da senha bem-sucedida (pode ser substituída pela resposta do servidor)
     var senhaAtualizadaComSucesso = true;
     
     if (senhaAtualizadaComSucesso) {
-      // Exemplo de mensagem de sucesso (pode ser substituída pela resposta do servidor)
       alert('Senha alterada com sucesso!');
       
       // Fechar a modal após a alteração de senha bem-sucedida
       $('#myModal').modal('close');
     } else {
-      // Exemplo de mensagem de erro (pode ser substituída pela resposta do servidor)
       alert('Falha ao alterar a senha. Tente novamente.');
     }
   }
       </script>
       
-  
+      <script src="assets/js/initialize.js"></script> 
 </body>
 </html>
