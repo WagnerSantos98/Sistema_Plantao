@@ -1,10 +1,10 @@
 # Projeto Sitema de Plantão
 
-    Esse projeto surgiu da demanda em que os médicos se utilizam de um sistema simples e 
+Esse projeto surgiu da demanda em que os médicos se utilizam de um sistema simples e 
 complexo, na questão de escala e plantão dos mesmos.
-    Com isso em mente desenvolvemos uma plataforma integrada e funcional, que parte do principio da facilidade e organização, um local onde o médico(plantonista)
+Com isso em mente desenvolvemos uma plataforma integrada e funcional, que parte do principio da facilidade e organização, um local onde o médico(plantonista)
 vê seus dias de plantões de acordo com o local onde trabalha, podendo também disponibilizar plantões não fixo a seus companheiros e todos sendos notificados da disponibilidade.
-    Em caso de aceite do plantão o médico assume a responsabilidade e todos cientes da troca, além disso o sistema disponibiliza a funcionalidade, da pessoa repsonsável pelas escalas, verificar mais de um local e equipe.
+Em caso de aceite do plantão o médico assume a responsabilidade e todos cientes da troca, além disso o sistema disponibiliza a funcionalidade, da pessoa repsonsável pelas escalas, verificar mais de um local e equipe.
 
 ## Visão geral do projeto
 
