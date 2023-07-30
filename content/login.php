@@ -12,7 +12,7 @@ if (isset($_POST['btn_acessar'])) {
 	$sql = "SELECT * FROM tb_usuarios WHERE email = '$email' AND senha_temp = '$senha'";
 	$result = mysqli_query($con, $sql);
 	if ($result->num_rows > 0) {
-		header("Location: ../index.php");
+		header("Location: acesso.php");
 	} else {
 		echo "<script>alert('Ooops! E-mail ou senha incorretos. ')</script>";
 	}
